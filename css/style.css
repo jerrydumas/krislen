@@ -1,0 +1,676 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+:root {
+    --wht: #fff;
+    --whta5: rgba(255, 255, 255, .5);
+    --blk: #000;
+    --blka5: rgba(0, 0, 0, 0.5);
+    --blka8: rgba(0, 0, 0, 0.8);
+    --montserrat: 'Montserrat', sans-serif;
+    --whtsmk: whitesmoke;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: var(--montserrat);
+    overflow-x: hidden;
+}
+
+
+/* Main Nav */
+
+.nav {
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    z-index: 9;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 33vw 35vw 35vw;
+    align-items: center;
+    transition: all .3s ease-in-out;
+    line-height: 1.5;
+    box-shadow: none;
+}
+
+.navChange {
+    background: var(--wht);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+    color: var(--blk);
+}
+
+.navChange>.brand {
+    display: flex;
+}
+
+.brand {
+    margin-left: 20px;
+    position: absolute;
+    display: none;
+    padding-bottom: 1rem;
+    z-index: 9999;
+}
+
+.brand h1,
+.sidebrand h1 {
+    font-size: 1.5rem;
+}
+
+.sidebrand {
+    max-width: 100%;
+}
+
+.navChange>.brand h1 a,
+.navChange>.hamburger .material-icons {
+    color: var(--blk);
+}
+
+.hamburger {
+    display: flex;
+    position: fixed;
+    right: 0;
+    margin-right: 40px;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: var(--wht);
+    width: 31vw;
+    height: 100vh;
+    z-index: 9;
+    transform: translateX(-100%);
+    transition: transform 1000ms linear;
+}
+
+.sidebar.open {
+    transform: translateX(-0%);
+    transition: all 300ms linear;
+}
+
+.closeNav.open {
+    transform: translateX(-100%);
+    transition: all 300ms linear;
+}
+
+.closeNav .material-icons {
+    color: var(--blk);
+    font-size: 2.5rem;
+}
+
+.closeNav {
+    position: absolute;
+    left: 93%;
+    top: -1%;
+    z-index: 9;
+}
+
+.sidebrand {
+    max-width: 100%;
+    position: relative;
+    top: -19px;
+    left: -1px;
+}
+
+.sidebrand h1 a {
+    color: var(--blk);
+}
+
+.address {
+    max-width: 100%;
+    height: 15vh;
+    position: relative;
+    top: -25px;
+    text-align: center;
+}
+
+.address ul li {
+    font-size: 1.2rem;
+}
+
+.links {
+    width: 100%;
+    max-height: 100%;
+    text-align: center;
+}
+
+.links ul {
+    width: 100%;
+}
+
+.links ul li {
+    padding: 1.5rem;
+}
+
+.links ul li:hover,
+.links ul li:focus {
+    background: var(--whtsmk);
+}
+
+.links ul li a {
+    color: var(--blk)
+}
+
+
+/* Hero */
+
+.hero {
+    background: url('../img/heroImg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.hero::before {
+    content: '';
+    background: var(--blka5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.heroContent {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.heroContent h1,
+.heroContent h2,
+.heroContent button {
+    color: var(--wht);
+    position: relative;
+    z-index: 1;
+}
+
+.heroContent .h1 {
+    margin-top: 12rem;
+}
+
+.heroContent .h2a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroContent h1 {
+    font-size: 4rem;
+}
+
+.heroContent h2 {
+    font-size: 2rem;
+}
+
+.heroContent .btn-hero {
+    width: 10rem;
+    height: 3rem;
+    background: var(--whta5);
+    border: 1px solid var(--whta5);
+    color: var(--blk);
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.heroContent .btn-hero:hover {
+    color: var(--blk);
+    background: var(--wht);
+}
+
+
+/* Pay Rent Section */
+
+.payrent {
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payrent .col1 {
+    margin: 1rem;
+}
+
+.payrent h3 {
+    font-size: 1.5rem;
+}
+
+.payrent .col2 {
+    display: flex;
+    padding-top: 1.1rem;
+}
+
+.payrent .col2 div p {
+    font-weight: 600;
+}
+
+
+/* Vacancies */
+
+.vacancies {
+    width: 100vw;
+}
+
+.vacTitle {
+    margin-bottom: 2rem;
+}
+
+.vacTitle h3 {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+
+/* Card */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    width: 100vw;
+}
+
+.card {
+    max-width: 388px;
+    width: 100%;
+}
+
+.card .card-image img {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+}
+
+.btn-floating i {
+    background: #ef5350;
+}
+
+.btn-floating.halfway-fab {
+    position: absolute;
+    right: 5px;
+}
+
+.btn-floating:hover i,
+.btn-floating:focus i {
+    background: #F44336;
+}
+
+
+/* Tenant Info */
+
+.tenantInfo {
+    display: grid;
+    grid-template-rows: 12vh 35vh;
+    margin: 0 0 5rem 0;
+}
+
+
+/* Tenant Info Rows */
+
+.tir1 {
+    padding-left: 1rem;
+}
+
+.tir1 h3 {
+    font-size: 2rem;
+}
+
+.tir2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* Tenant Info Columns */
+
+.tic1,
+.tic2 {
+    padding: 0 2rem;
+}
+
+.tic1 h4,
+.tic2 h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+/* Footer */
+
+.footer {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Modal */
+
+.modal1,
+.modal2,
+.modal3 {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    z-index: 99;
+    max-height: fit-content;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--wht);
+}
+
+.closeModalBtn1,
+.closeModalBtn2,
+.closeModalBtn3 {
+    position: fixed;
+    top: 0;
+    right: 1.3%;
+    font-size: 4rem;
+    z-index: 9;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Carousel */
+
+.carousel1,
+.carousel2,
+.carousel3 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: none;
+}
+
+.carousel>ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+.slide>img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus {
+    outline: 1px solid black;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}
+
+.contact h3 {
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.contactPeople {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: 1.5rem;
+}
+
+.persons {
+    padding: 1rem;
+}
+
+.contact p {
+    padding-left: 1.5rem;
+    font-weight: 600;
+}
+
+.footer small {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:1175px) {
+    .card {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 977px)
+/* and (min-width:768px)  */
+
+{
+    .closeNav {
+        position: absolute;
+        left: 90%;
+    }
+    .payrent,
+    .payrent .col2 {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+    }
+    .payrent .col1 {
+        padding-top: 1rem;
+    }
+    .vacancies {
+        width: 100vw;
+        margin-top: 4rem;
+    }
+    .sidebrand {
+        max-width: 100%;
+        position: relative;
+        top: -19px;
+        left: 25px;
+    }
+    .contactPeople {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-left: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .closeNav {
+        position: absolute;
+        left: 88%;
+    }
+    .sidebrand {
+        max-width: 100%;
+        position: relative;
+        top: -19px;
+        left: 4px;
+    }
+    /* .heroContent h1 {
+        font-size: 3rem;
+    } */
+    .contact {
+        margin-top: 8rem;
+    }
+    .contact {
+        margin-top: 11rem;
+    }
+    .contactPeople {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 1.5rem;
+    }
+    .address {
+        max-width: 64%;
+    }
+    .links {
+        width: 100%;
+        max-height: 100%;
+        text-align: center;
+        position: relative;
+        top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        width: 100vw;
+    }
+    .card {
+        max-width: 94%;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .sidebrand {
+        text-align: center;
+    }
+    .closeNav {
+        position: absolute;
+        left: 85%;
+    }
+    .address {
+        max-width: 78%;
+    }
+    .heroContent .h1 {
+        text-align: center;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        width: 100vw;
+    }
+    .card {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hamburger {
+        padding-right: 0;
+        position: fixed;
+        right: -20px;
+    }
+    .hero .heroContent .h1 {
+        text-align: center;
+        font-size: 1rem
+    }
+    .sidebar {
+        width: 45vw;
+    }
+    .sidebrand {
+        position: relative;
+        left: 0;
+        text-align: center;
+    }
+    .tenantInfo {
+        display: grid;
+        grid-template-rows: 12vh 85%;
+        margin: 0 0 5rem 0;
+    }
+    .tir2 {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /* .card {
+        max-width: 75%;
+    } */
+    .contact {
+        margin-top: 0;
+    }
+    .closeNav {
+        position: absolute;
+        left: 88%;
+    }
+    .tic2 {
+        padding: 0 3rem;
+    }
+    .contactPeople {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 1.5rem;
+    }
+    .footer small {
+        padding: 1rem 6rem 1rem 1rem;
+    }
+    .contact p {
+        padding: 0 1.5rem;
+    }
+}
+
+@media screen and (max-width: 481px) and (min-width:320px) {}
