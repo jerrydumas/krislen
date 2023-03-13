@@ -166,7 +166,7 @@ body {
 /* Hero */
 
 .hero {
-  background: url('./img/heroImg.jpeg');
+  background: url('../img/heroImg.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
